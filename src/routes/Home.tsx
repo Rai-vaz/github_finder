@@ -12,6 +12,7 @@ const Home = () => {
 
   const loadUser = async (userName: string) => {
     setError(false)
+    setUser(null)
     const res = await fetch(`https://api.github.com/users/${userName}`)
     if (res.status === 404) {
       setError(true)
